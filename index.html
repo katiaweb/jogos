@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo-favicon/favicon-32x32.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Jogos</title>
+  </head>
+
+  <body>
+
+    <!-- #topbar: barra com logo e navegação -->
+    <header class="topbar">
+      <!-- .brand: área do logotipo -->
+      <div class="brand">
+        <a href="index.html" class="brand__link" aria-label="Voltar para a Home">
+          <!-- Logo SVG "Jogo" -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="60"
+            viewBox="0 0 180 60" role="img" aria-label="Logo Jogo">
+            <!-- Fundo arredondado -->
+            <rect width="180" height="60" rx="12" fill="url(#grad)" />
+
+            <!-- Ícone de controle -->
+            <g transform="translate(20,12)">
+              <rect width="36" height="20" rx="6" fill="#fff" />
+              <!-- Cruz direcional -->
+              <rect x="7" y="6" width="10" height="2" fill="#7c3aed" />
+              <rect x="11" y="2" width="2" height="10" fill="#7c3aed" />
+              <!-- Botões -->
+              <circle cx="26" cy="6" r="3" fill="#ff914d" />
+              <circle cx="26" cy="14" r="3" fill="#ffd27a" />
+            </g>
+          </svg>
+
+        </a>
+      </div>
+
+      <!-- .nav: menu principal do site -->
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="nav__link is-current" href="index.html">Home</a>
+        <a class="nav__link" href="sobre.html">Sobre</a>
+        <a class="nav__link" href="contato.html">Contato</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- .page-title: título da página -->
+      <h1 class="titulo-h1">Escolha o seu jogo</h1>
+
+      <!-- .games-grid: grade de cartões de jogos -->
+      <section class="container">
+        <div class="game-grid">
+          <!-- .game-card: cada cartão é um <a> clicável -->
+          <a class="game-card" href="jogo-div.html">
+            <span class="game-card__emoji" aria-hidden="true">➗</span>
+            <span class="game-card__title">Divisão</span>
+          </a>
+
+          <a class="game-card" href="jogosMulti.html">
+            <span class="game-card__emoji" aria-hidden="true">✖️</span>
+            <span class="game-card__title">Multiplicação</span>
+          </a>
+
+          <a class="game-card" href="jogosSoma.html">
+            <span class="game-card__emoji" aria-hidden="true">➕</span>
+            <span class="game-card__title">Adição</span>
+          </a>
+
+          <a class="game-card" href="jogosSub.html">
+            <span class="game-card__emoji" aria-hidden="true">➖</span>
+            <span class="game-card__title">Subtração</span>
+          </a>
+
+          <a class="game-card" href="jogovelha.html">
+            <span class="game-card__emoji" aria-hidden="true">⭕</span>
+            <span class="game-card__title">Jogo da Velha</span>
+          </a>
+
+          <a class="game-card" href="cabeca.html">
+            <span class="game-card__emoji" aria-hidden="true">🧩</span>
+            <span class="game-card__title">Quebra-cabeça</span>
+          </a>
+
+          <a class="game-card" href="jogo-memoria.html">
+            <span class="game-card__emoji" aria-hidden="true">🧠</span>
+            <span class="game-card__title">Jogo da Memória</span>
+          </a>
+          <a class="game-card" href=".html">
+            <span class="game-card__emoji" aria-hidden="true">🧠</span>
+            <span class="game-card__title">Jogo da Memória2</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__nav">
+        <a href="index.html">Home</a> ·
+        <a href="sobre.html">Sobre</a> ·
+        <a href="contato.html">Contato</a>
+      </p>
+      <p class="site-footer__copy">© Todos os direitos reservados. | Professora Katia Rodrigues — SENAI 2025</p>
+    </footer>
+  </body>
+</html>
