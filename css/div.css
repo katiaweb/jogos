@@ -1,0 +1,147 @@
+/* Container do bloco de níveis + cartão do jogo */
+.table-menu {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Linha de botões de nível (usa o 1º <div> dentro de .table-menu sem precisar mudar HTML) */
+.table-menu > div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 15px;
+  
+}
+
+/* Cartão do jogo */
+.table1 {
+  width: min(100%, 520px);
+  margin: 0 auto 24px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background: #ffd93b;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* (se usar a .table2 em outras páginas, mantém simples e consistente) */
+.table2 {
+  width: min(100%, 880px);
+  margin: 0 auto;
+  background: #fff;
+  padding: 15px;
+}
+
+/* Inputs “com cara de cartão” */
+.box {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 12px;
+  width: 180px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* Foco simples e acessível */
+.box:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124,58,237,.15);
+}
+
+/* Botões básicos (mantendo seu estilo) */
+.button {
+  color: #fff;
+  background: #4CAF50;
+  text-align: center;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  transition: 0.2s;
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+  letter-spacing: 0.05em;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 3px solid #fff;
+}
+/* Estado ativo dos botões de nível */
+.nivel-btn.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 6px 14px rgba(0,0,0,0.2);
+  border-color: gold;
+}
+
+/* Cores dos botões */
+.button1 { background: #4CAF50; }
+.button2 { background: #ff7043; }
+.button3 { background: #0d0d0e; }
+
+
+/* Emoji do operador maior */
+.game-card__emoji {
+  font-size: 2rem;
+}
+
+.resp{
+  text-align: center;
+  color: #fff;
+}
+/* ================================
+   RESPONSIVIDADE — ÁREA DO JOGO
+   ------------------------------- */
+@media (max-width: 768px) {
+  .table-menu {
+    padding: 12px;
+  }
+  .table1 {
+    width: 100%;
+    max-width: 520px;
+    padding: 16px;
+    margin: 0 auto 20px;
+  }
+  .button {
+    width: 48%;
+    min-height: 44px;        /* conforto de toque */
+    font-size: 1rem;
+  }
+  /* linha dos níveis */
+  .table-menu .nivel-btn {
+    flex: 1 1 30%;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+    max-width: 220px;
+    font-size: 1.1rem;
+    padding: 10px 14px;
+  }
+  .button {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    padding: 10px 14px;
+    font-size: 1rem;
+    margin: 6px auto;
+    display: block;
+  }
+  .nivel-btn.active {
+    transform: none; /* evita “pular” o layout no apertado */
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.9), 0 4px 10px rgba(0,0,0,0.15);
+  }
+  table { margin: 0 auto; } /* mantém os dois inputs e o símbolo中央 */
+  .game-card__emoji { font-size: 1.8rem; }
+}

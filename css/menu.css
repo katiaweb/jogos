@@ -1,0 +1,288 @@
+/* ================================
+   VARIÁVEIS DE CORES
+   ------------------------------- */
+:root {
+  --bg: linear-gradient(to bottom, #ffd27a, #ff914d);
+  --card: #ff4d6d;
+  --ink: #2e1065;
+  --muted: #6b7280;
+  --brand: #7c3aed;
+  --ring: rgba(124, 58, 237, .25);
+  --panel: #a22a18;
+  --accent: #38bdf8;
+  --win: #22c55e;
+  --text: #ff4d6d;
+  --front: #90d1f9;
+  --Rosa: #ff4d6d;
+  --amarelo: #ffd93b;
+  --azul: #4cc9f0;
+}
+
+/* ================================
+   RESET BÁSICO
+   ------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* corpo ocupa tela toda */
+  margin: 0;
+}
+
+/* ================================
+   LAYOUT PRINCIPAL COM GRID
+   ------------------------------- */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* header | conteúdo | footer */
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: #ff4d6d;
+}
+
+/* ================================
+   HEADER
+   ------------------------------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ff4d6d, #ffd93b);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+}
+
+/* Logo */
+/* .brand: área de logo, altura estável para não “pular” layout */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* .brand__link: link do logo sem decoração */
+.brand__link {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* .brand__logo: imagem do logo dimensionada por altura */
+.brand__logo {
+  width: clamp(48px, 8vw, 96px);
+  /* mínimo 48px, máximo 96px */
+  height: auto;
+  /* mantém proporção */
+  display: block;
+}
+
+
+/* Menu */
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav__link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.nav__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .10);
+}
+
+.is-current {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* ================================
+   MAIN
+   ------------------------------- */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* centraliza na horizontal */
+  align-items: center;
+  /* centraliza na vertical */
+  padding: 16px;
+}
+
+/* Título */
+.titulo-h1 {
+  text-align: center;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  color: var(--ink);
+
+}
+
+.container {
+  width: 100%;
+  max-width: 880px;
+  margin: 15px;
+}
+
+
+/* Grade */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 880px;
+
+}
+
+/* Cada cartão de jogo */
+.game-card {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding: 22px 16px;
+  border-radius: 18px;
+  background: #ffd93b;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .10);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
+}
+
+/* Ícone (emoji grande) */
+.game-card__emoji {
+  font-size: 2rem;
+}
+
+/* Título do jogo */
+.game-card__title {
+  font-weight: 700;
+}
+
+/* ================================
+   FOOTER
+   ------------------------------- */
+.site-footer {
+  width: 100%;
+  /* ocupa toda a largura */
+  text-align: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, .6);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, .08);
+  padding: 8px 12px;
+}
+
+.site-footer__nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer__copy {
+  margin-top: 6px;
+  font-size: .9rem;
+}
+
+/* ================================
+   RESPONSIVIDADE — HEADER + NAV
+   ------------------------------- */
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .brand svg {
+    /* seu logo inline */
+    width: 140px;
+    height: auto;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav__link {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  .titulo-h1 {
+    font-size: clamp(1.3rem, 4.5vw, 1.8rem);
+    margin: 12px 0 6px;
+  }
+
+  main {
+    padding: 12px;
+  }
+}
+
+/* ================================
+   RESPONSIVIDADE — GRADE DE JOGOS
+   ------------------------------- */
+/* sua grade já usa .game-grid; vamos reforçar o comportamento */
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-grid {
+    grid-template-columns: 1fr 1fr;
+    /* 2 colunas no mobile pequeno */
+    gap: 10px;
+  }
+
+  .game-card {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+
+  .game-card__emoji {
+    font-size: 1.6rem;
+  }
+
+  .game-card__title {
+    font-size: 0.95rem;
+  }
+}
+
+/* ================================
+   RESPONSIVIDADE — FOOTER
+   ------------------------------- */
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 8px;
+  }
+
+  .site-footer__nav {
+    font-size: 0.95rem;
+  }
+
+  .site-footer__copy {
+    font-size: 0.85rem;
+  }
+}
